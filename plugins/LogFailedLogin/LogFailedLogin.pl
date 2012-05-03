@@ -44,15 +44,15 @@ MT->add_plugin( $plugin );
 
             # log message
             $app->log({
-                message  => $plugin->translate(
+                message   => $plugin->translate(
                     "Failed login attempt by user '[_1]' (ID:[_2])",
                     $author->name,
                     $author->id,
                 ),
                 author_id => $author->id,
-                level    => MT::Log::SECURITY(),
-                category => 'login_user',
-                class    => 'author',
+                level     => MT::Log::SECURITY(),
+                category  => 'login_user',
+                class     => 'author',
             });
         }
 
