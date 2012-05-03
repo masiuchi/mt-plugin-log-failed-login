@@ -33,8 +33,9 @@ MT->add_plugin( $plugin );
         my $res = $orig->( $auth, $ctx );
 
         if ( MT::Auth::INVALID_PASSWORD() == $res ) {
-            # get author
             my $app = $ctx->{app};
+            
+            # get author
             my ( $author ) = $app->user_class->search({
                 name      => $ctx->{username},
                 type      => AUTHOR,
